@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block content %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+              {% if user.is_authenticated  and post.author == request.user%}
+              <a class="btn btn-default" href="{% url 'post-edit' id=post.pk %}"><span class="bi bi-pen"></span></a>
+              {% endif %}
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <img src="{{post.photo.url}}" class="post-photo" alt="...">
+            <p class="article-content">{{ post.content|safe }}</p>
+          </div>
+        </article>
+{% endblock content %}
