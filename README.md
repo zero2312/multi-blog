@@ -30,7 +30,7 @@
 
 1. Клонируй репозиторий:
    ```bash
-   git clone https://github.com/yourusername/Multi-user-blog.git
+   git clone https://github.com/zero2312/Multi-user-blog.git
    cd Multi-user-blog
    ```
 
